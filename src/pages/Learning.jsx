@@ -14,7 +14,7 @@ function Learning() {
 
       <div style={gridStyle}>
         {courses.map(course => (
-          <div key={course.id} className="card">
+          <div key={course.id} className="card-3d" style={cardStyle}>
             <h3>{course.title}</h3>
             <p style={{ color: "#aaa" }}>{course.desc}</p>
             <button className="button" style={{ marginTop: "10px" }}>
@@ -23,9 +23,27 @@ function Learning() {
           </div>
         ))}
       </div>
+      <style>{`
+        .card-3d {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
+        .card-3d:hover {
+          transform: translateY(-10px) rotateX(5deg);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+      `}</style>
     </div>
   );
 }
+
+const cardStyle = {
+  padding: "20px",
+  borderRadius: "12px",
+  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  color: "#fff",
+  perspective: "1000px"
+};
 
 const gridStyle = {
   display: "grid",

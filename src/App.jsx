@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Support from "./pages/Support";
 import Settings from "./pages/Settings";
 import Learning from "./pages/Learning";
-
+import Home from "./pages/Home";
 function App() {
   return (
     <BrowserRouter>
@@ -23,12 +23,15 @@ function App() {
           <NavLink to="/settings" style={linkStyle}>
             Settings
           </NavLink>
+          <NavLink to="/home" style={linkStyle}>
+            Home
+          </NavLink>
         </div>
 
         {/* Main Content */}
         <div style={contentStyle}>
           <Routes>
-            <Route path="/" element={<Learning />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/learning" element={<Learning />} />
             <Route path="/support" element={<Support />} />
             <Route path="/settings" element={<Settings />} />
